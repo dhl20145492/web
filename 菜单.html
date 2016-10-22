@@ -14,28 +14,28 @@
         a{
             text-decoration: none;
         }
-        #mune .mainmnue{
+        #menu .mainmenu{
             float: left;
             width: 100px;
             height: 30px;
             background: darkgray;
             margin-right: 5px;
         }
-        #mune .mainmnue a{
+        #menu .mainmenu a{
             width: 100px;
             height: 30px;
             display: block;
             text-align: center;
             line-height: 30px;
         }
-        #mune .submune{
+        #menu .submenu{
             background: aliceblue;
-            /*display: none;*/
+            display: none;
         }
-        #mune .submune li{
+        #menu .submenu li{
             border-bottom: 1px dashed #cccccc;
         }
-        #mune .submune a{
+        #menu .submenu a{
             text-align: left;
             line-height: 30px;
             text-indent: 5px;
@@ -45,31 +45,47 @@
     </style>
 </head>
 <body>
-<ul id="mune">
-    <li class="mainmnue">
+<ul id="menu">
+    <li class="mainmenu">
         <a href="">link1</a>
-        <ul class="submune">
+        <ul class="submenu">
             <li><a href="">sublink1</a></li>
             <li><a href="">sublink2</a></li>
             <li><a href="">sublink3</a></li>
         </ul>
     </li>
-    <li class="mainmnue">
+    <li class="mainmenu">
         <a href="">link2</a>
-        <ul class="submune">
+        <ul class="submenu">
             <li><a href="">sublink1</a></li>
             <li><a href="">sublink2</a></li>
             <li><a href="">sublink3</a></li>
         </ul>
     </li>
-    <li  class="mainmnue">
+    <li  class="mainmenu">
         <a href="">link3</a>
-        <ul class="submune">
+        <ul class="submenu">
             <li><a href="">sublink1</a></li>
             <li><a href="">sublink2</a></li>
             <li><a href="">sublink3</a></li>
         </ul>
     </li>
 </ul>
+<script>
+var oUl = document.getElementById("menu");
+    var aLi = oUl.getElementsByTagName("Li");
+    for(var i=0;i<aLi.length;i++){
+        if(aLi[i].className == 'mainmenu'){
+            aLi[i].onmouseover = function(){
+                var oMainmenu = this.getElementsByTagName("ul")[0];
+                oMainmenu.style.display = "block"
+            };
+            aLi[i].onmouseout = function(){
+                var oMainmenu = this.getElementsByTagName("ul")[0];
+                oMainmenu.style.display = "none"
+            };
+        }
+    }
+    </script>
 </body>
 </html>
