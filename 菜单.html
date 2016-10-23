@@ -73,19 +73,22 @@
 </ul>
 <script>
 var oUl = document.getElementById("menu");
-    var aLi = oUl.getElementsByTagName("Li");
+//var aLi = oUl.getElementsByClassName('mainmenu')
+//    var aLi = oUl.getElementsByTagName("Li");
+var aLi = oUl.children;
     for(var i=0;i<aLi.length;i++){
-        if(aLi[i].className == 'mainmenu'){
+//        if(aLi[i].className == 'mainmenu'){
             aLi[i].onmouseover = function(){
-                var oMainmenu = this.getElementsByTagName("ul")[0];
-                oMainmenu.style.display = "block"
+//                var oMainmenu = this.getElementsByTagName("ul")[0];
+                var  oSubmenu = this.children[1]
+                oSubmenu.style.display = "block"
             };
             aLi[i].onmouseout = function(){
-                var oMainmenu = this.getElementsByTagName("ul")[0];
-                oMainmenu.style.display = "none"
+                var oSubmenu = this.children[1];
+                oSubmenu.style.display = "none"
             };
         }
-    }
+
     </script>
 </body>
 </html>
