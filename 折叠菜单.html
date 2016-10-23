@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+                list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu .main-menu{
+            width: 100px;
+            text-align: center;
+
+            background: gold;
+        }
+        #menu .subMenu{
+            background: chartreuse;
+            text-align: center;
+            display: none;
+
+        }
+        #menu h3{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+        }
+        #menu .subMenu
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li class="main-menu">
+        <h3>link1</h3>
+        <ul class="subMenu">
+            <li>sublink1</li>
+            <li>sublink2</li>
+            <li>sublink3</li>
+        </ul>
+    </li>
+    <li class="main-menu">
+        <h3>link2</h3>
+        <ul class="subMenu">
+            <li>sublink1</li>
+            <li>sublink2</li>
+            <li>sublink3</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var oUl = document.getElementById('menu');
+    var aH3 = oUl.getElementsByTagName('h3');
+    var aSubMenu = oUl.getElementsByTagName('ul');
+    for(var i=0;i<aH3.length;i++){
+        aH3[i].index = i;
+        aH3[i].bShow = false;
+        aH3[i].onclick = function(){
+            var oSubMenu = aSubMenu[this.index];
+            if(this.bShow){
+            oSubMenu.style.display = 'block';
+            }else{
+                oSubMenu.style.display = 'none';
+            }
+            this.bShow = !this.bShow
+
+        };
+        aH3[i].onselectstart = function (){
+            return false;
+        }
+    };
+
+</script>
+</body>
+</html>
