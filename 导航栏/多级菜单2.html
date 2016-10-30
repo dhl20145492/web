@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+            cursor: pointer;
+            width: 100px;
+        }
+
+        h3 {
+            width: 100px;
+            height: 30px;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .sub {
+            display: none;
+        }
+
+        .sub li {
+            background-color: gray;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-bottom: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li class="main">
+        <h3>link1</h3>
+        <ul class="sub">
+            <li>sub1</li>
+            <li>sub2</li>
+            <li>sub3</li>
+        </ul>
+    </li>
+    <li class="main">
+        <h3>link2</h3>
+        <ul class="sub">
+            <li>sub1</li>
+            <li>sub2</li>
+            <li>sub3</li>
+        </ul>
+    </li>
+</ul>
+
+
+<script>
+
+    //        var oMenu = document.getElementById('menu');
+    //        var aLi=oMenu.getElementsByTagName('li');
+    //        for(var i=0;i<aLi.length;i++){
+    //            if (aLi[i].className == 'main'){
+    //                aLi[i].onclick=function () {
+    //                    var oSub=this.getElementsByTagName('ul')[0];
+    //                    if(oSub.style.display=='block'){
+    //                        oSub.style.display='none';
+    //                    }else{
+    //                        oSub.style.display='block';
+    //                    }
+    //                }
+    //            }
+    //        }
+
+
+    //    var oMenu = document.getElementById('menu');
+    //    var aLi = oMenu.children;
+    //    for (var i = 0; i < aLi.length; i++) {
+    //        aLi[i].onclick = function () {
+    //            var oSub = this.children[1];
+    //            if (oSub.style.display == 'block') {
+    //                oSub.style.display = 'none';
+    //            } else {
+    //                oSub.style.display = 'block';
+    //            }
+    //        }
+    //    }
+
+
+    //    var oMenu = document.getElementById('menu');
+    //    var aH3 = oMenu.getElementsByTagName('h3');
+    //    var aUl = oMenu.getElementsByTagName('ul');
+    //    for (var i = 0; i < aH3.length; i++) {
+    //        aH3[i].index = i;
+    //        aH3[i].onclick = function () {
+    //            var oSub = aUl[this.index];
+    //            if (oSub.style.display == 'block') {
+    //                oSub.style.display = 'none';
+    //            } else {
+    //                oSub.style.display = 'block';
+    //            }
+    //        };
+    //        aH3[i].onselectstart = function () {
+    //            return false;
+    //        }
+    //    }
+
+
+    var oMenu = document.getElementById('menu');
+    var aH3 = oMenu.getElementsByTagName('h3');
+    var aUl = oMenu.getElementsByTagName('ul');
+    for (var i = 0; i < aH3.length; i++) {
+        aH3[i].index = i;
+        aH3[i].bShow = false;
+        aH3[i].onclick = function () {
+            var oSub = aUl[this.index];
+            if (this.bShow) {
+                oSub.style.display = 'none';
+            } else {
+                oSub.style.display = 'block';
+            }
+            this.bShow = !this.bShow;
+        };
+        aH3[i].onselectstart = function () {
+            return false;
+        }
+    }
+
+
+    //    var oMenu = document.getElementById('menu');
+    //    var aH3 = oMenu.getElementsByTagName('h3');
+    //    for (var i = 0; i < aH3.length; i++) {
+    //        aH3[i].onclick = function () {
+    //            var oNext = next(this);
+    //            if (oNext.style.display == 'block') {
+    //                oNext.style.display = 'none';
+    //            } else {
+    //                oNext.style.display = 'block';
+    //            }
+    //        }
+    //    }
+    //
+    //    function next(elem) {
+    //        do {
+    //            elem = elem.nextSibling;
+    //        } while (elem && elem.nodeType != 1);
+    //        return elem;
+    //    }
+
+
+</script>
+</body>
+</html>
