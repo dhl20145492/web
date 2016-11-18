@@ -60,15 +60,17 @@
  </ul>
  <script>
      var aUl = document.getElementById('menu');
-     var aLi = document.getElementsByClassName('main-menu');
-     var oSubMenu = document.getElementsByClassName('sub-menu');
+     var aLi = aUl.children;
+//     var oSubMenu = document.getElementsByClassName('sub-menu');
      for(var i = 0;i<aLi.length;i++){
-        aLi.onmouseover = function(){
+        aLi[i].onmouseover = function(){
+            var oSubMenu = this.children[1];
             oSubMenu.style.display = 'block'
         };
-         aLi.onmouseout = function(){
+         aLi[i].onmouseout = function(){
+             var oSubMenu = this.children[1];
              oSubMenu.style.display = 'none'
-         }
+         };
 
 
      }
