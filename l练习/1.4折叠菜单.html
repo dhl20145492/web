@@ -25,7 +25,7 @@
             line-height: 30px;
             color: white;
             display: block;
-
+;
         }
         #menu .sub-menu{
             display: none;
@@ -59,15 +59,14 @@
      </li>
  </ul>
  <script>
-     var aUl = document.getElementById('main');
-     var oLi = aUl.getElementsByTagName('li');
-     for(var i = 0;i<oLi.length;i++){
-        oLi.onmouseover = function(){
-            var oSubMenu = this.children[1];
+     var aUl = document.getElementById('menu');
+     var aLi = document.getElementsByClassName('main-menu');
+     var oSubMenu = document.getElementsByClassName('sub-menu');
+     for(var i = 0;i<aLi.length;i++){
+        aLi.onmouseover = function(){
             oSubMenu.style.display = 'block'
-        }
-         oLi.onmouseout = function(){
-             var oSubMenu = this.children[1];
+        };
+         aLi.onmouseout = function(){
              oSubMenu.style.display = 'none'
          }
 
