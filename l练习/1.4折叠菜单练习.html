@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>折叠菜单练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+
+
+        #menu .main-menu h3{
+            color: white;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: black;
+        }
+        #menu .sub-menu{
+            background: #666666;
+            width: 100px;
+            display: none;
+        }
+        #menu .sub-menu a{
+            color: #cccccc;
+            text-align: center;
+            width: 100px;
+            height: 30px;
+            display: block;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li class="main-menu">
+        <h3>link1</h3>
+        <ul class="sub-menu">
+            <li><a href="">sublink1</a></li>
+            <li><a href="">sublink2</a></li>
+            <li><a href="">sublink3</a></li>
+        </ul>
+    </li>
+    <li class="main-menu">
+        <h3>link2</h3>
+        <ul class="sub-menu">
+            <li><a href="">sublink1</a></li>
+            <li><a href="">sublink2</a></li>
+            <li><a href="">sublink3</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+//    var oUl = document.getElementById('menu');
+//    var aLi = oUl.children;;
+//                aSubMenu.onclick = function(){
+//                    var aSubMenu = aLi.children[1]
+//                    if(oSubMenu.style.display == 'none'){
+//                        oSubMenu.style.display = 'block'
+//                    }
+//                }
+var oUl = document.getElementById('menu');
+var aH3 = oUl.getElementsByTagName('h3');
+var aSubMenu = oUl.getElementsByTagName('ul');
+if(oSubMenu.style.display == 'none' || oSubMenu.style.display == ""){
+ oSubMenu.style.display = 'block';
+ }else{
+ oSubMenu.style.display = 'none';
+ }
+
+
+
+</script>
+</body>
+</html>
