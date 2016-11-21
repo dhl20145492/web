@@ -59,22 +59,12 @@
     </li>
 </ul>
 <script>
-//    var oUl = document.getElementById('menu');
-//    var aLi = oUl.children;;
-//                aSubMenu.onclick = function(){
-//                    var aSubMenu = aLi.children[1]
-//                    if(oSubMenu.style.display == 'none'){
-//                        oSubMenu.style.display = 'block'
-//                    }
-//                }
-var oUl = document.getElementById('menu');
-var aH3 = oUl.getElementsByTagName('h3');
-var aSubMenu = oUl.getElementsByTagName('ul');
-if(oSubMenu.style.display == 'none' || oSubMenu.style.display == ""){
- oSubMenu.style.display = 'block';
- }else{
- oSubMenu.style.display = 'none';
- }
+    var oUl = document.getElementById('menu');
+    var aLi = oUl.children;
+    var aSubMenu = document.getElementsByClassName('sub-menu');
+                aSubMenu.onclick = function(){
+                        oSubMenu.style.display = 'block'
+                }
 
 
 
