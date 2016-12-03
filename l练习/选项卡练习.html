@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选项卡练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 400px;
+            height: 400px;
+            margin: 150px auto;
+        }
+        #tab{
+            overflow: hidden;
+        }
+        #tab li{
+            width: 130px;
+            height: 30px;
+            background: #bbbbbb;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            cursor: pointer;
+            margin-right: 3px;
+        }
+        #content{
+            background: #666666;
+            width: 400px;
+            height: 370px;
+        }
+        #tab .selected{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="tab">
+            <li class="selected">html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+        <div id="content">11111</div>
+    </div>
+    <script>
+        var data = ['11111','222222','333333'];
+        var oTab = document.getElementById('tab');
+        var aLi = oTab.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+          for(var i = 0;i<aLi.length;i++){
+              aLi[i].index = i;
+              aLi[i].onclick = function(){
+                  for(var i = 0;i<aLi.length;i++){
+                      aLi[i].className = '';
+                  }
+                  this.className = "selected";
+                  oContent.innerHTML = data[this.index];
+              }
+          }
+
+
+
+    </script>
+</body>
+</html>
