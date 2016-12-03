@@ -24,7 +24,7 @@
             line-height: 30px;
             background: black;
         }
-        #sub-menu{
+        .sub-menu{
             background: #666666;
             width: 100px;
             display: none;
@@ -43,7 +43,7 @@
 <ul id="menu">
     <li class="main-menu">
         <h3>link1</h3>
-        <ul id="sub-menu">
+        <ul class="sub-menu">
             <li><a href="">sublink1</a></li>
             <li><a href="">sublink2</a></li>
             <li><a href="">sublink3</a></li>
@@ -51,7 +51,7 @@
     </li>
     <li class="main-menu">
         <h3>link2</h3>
-        <ul id="sub-menu">
+        <ul class="sub-menu">
             <li><a href="">sublink1</a></li>
             <li><a href="">sublink2</a></li>
             <li><a href="">sublink3</a></li>
@@ -60,11 +60,16 @@
 </ul>
 <script>
     var oUl = document.getElementById('menu');
-    var aLi = oUl.children;
-    var aSubMenu = document.getElementById('sub-menu');
-                aSubMenu.onclick = function(){
+    var aLi = oUl.getElementsByTagName('li');
+            for(var i=0;i<aLi.length;i++){
+                if(aLi[i].className == 'main-menu'){
+                   aLi[i].onclick = function(){
+                       var oSubMenu = this.getElementsByTagName('ul')[0];
                         oSubMenu.style.display = 'block'
+                       }
+                   }
                 }
+
 
 
 
