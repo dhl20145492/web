@@ -95,12 +95,16 @@
 //        }
 //    },0);
 //
-//    var idx = 0;
+    var idx = 0;
 //    oContainer.onclick = function(){
 //        idx++;
 //        this.style.WebkitTransform = 'rotateY('+ -idx*40+'deg)'
-//    }
+//    };
+ setInterval(function(oContainer){
 
+         oContainer.style.WebkitTransform = 'rotateY(40deg)';
+
+ },500);
 
     for(var i = 0 ;i<aImg.length;i++){
         (function(index){
@@ -109,12 +113,28 @@
             },(9-i)*100)
         })(i);
     }
+//
+//        var idx = 0;
+//        oContainer.onclick = function(){
+//            idx++;
+//            this.style.WebkitTransform = 'rotateY('+ -idx*40+'deg)'
+//        }
+//
 
-        var idx = 0;
-        oContainer.onclick = function(){
-            idx++;
-            this.style.WebkitTransform = 'rotateY('+ -idx*40+'deg)'
-        }
+
+//    for(var i = 0 ;i<aImg.length;i++){
+//        (function(index){
+//            setTimeout(function(){
+//                aImg[index].style.WebkitTransform = 'rotateY('+ -index*40+'deg) translateZ('+ (translateDis+20)+ 'px)'
+//            },(9-i)*100)
+//        })(i);
+//    }
+//    var idx = 0;
+//    var z = -1;
+//    oContainer.onmousemove = function(){
+//        idx++;
+//            this.style.WebkitTransform = 'rotateY('+ i*(-idx*40)+'deg)'
+//    }
 </script>
 </body>
 </html>
