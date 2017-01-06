@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3D轮番图</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #container{
+        width: 600px;
+        height: 400px;
+        margin: 50px auto;
+        position: relative;
+        -webkit-perspective: 800px;
+    }
+    #img img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        -webkit-transform-origin: bottom;
+        -webkit-transform: rotateX(180deg);
+    }
+    #container .show{
+       -webkit-animation: show 1s ease forwards;
+    }
+    #container .hide{
+        -webkit-animation: hide 1s ease forwards;
+    }
+    @-webkit-keyframes show {
+        0%{}
+        70%{-webkit-transform: rotateX(-20deg);}
+        75%{-webkit-transform: rotateX(15deg);}
+        80%{-webkit-transform: rotateX(-10deg);}
+        85%{-webkit-transform: rotateX(5deg);}
+        90%{-webkit-transform: rotateX(-5deg);}
+        100%{-webkit-transform: rotateX(0deg);
+            opacity: 1;
+        }
+
+    }
+    @-webkit-keyframes hide {
+        from{
+            -webkit-transform: rotateX(0deg);
+            opacity: 1;
+        }
+        to{
+            -webkit-transform: rotateX(-180deg);
+            opacity: 0;
+        }
+    }
+    #container span{
+        width: 50px;
+        height: 50px;
+        background: #ccc;
+        position: absolute;
+        line-height: 50px;
+        text-align: center;
+        font-size: 45px;
+        top: 50%;
+        margin-top: -25px;
+        border-radius: 50px;
+    }
+    #prev{
+        left: -100px;
+    }
+    #next{
+        right: -100px;
+    }
+</style>
+<div id="container">
+    <div id="img">
+        <img class="show" src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpg" alt=""/>
+        <img src="img/4.jpg" alt=""/>
+    </div>
+    <span id="prev">&lt;</span>
+    <span id="next">&gt;</span>
+    <script>
+        var oNext = document.getElementById('next');
+        var oPrev = document.getElementById('prev');
+        var aImg = document.getElementsByTagName('img');
+        var iNow = 0;
+        oNext.onclick = function(){
+            aImg[iNow].className = 'hide';
+            iNow++;
+            if(iNow == aImg.length){
+                iNow = 0;
+            }
+            aImg[iNow].className = 'show'
+        };
+        oPrev.onclick = function(){
+            aImg[iNow].className = 'hide';
+            iNow--;
+            if(iNow == -1){
+                iNow = aImg.length - 1;
+            }
+            aImg[iNow].className = 'show'
+        }
+    </script>
+</div>
+</body>
+</html>

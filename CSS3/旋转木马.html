@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>旋转木马</title>
+    <title>生日快乐</title>
     <style>
         *{
             margin: 0;
@@ -27,7 +27,7 @@
             margin-left: -64px;
             margin-top: 100px;
             -webkit-transform-style: preserve-3d;
-            -webkit-transition: all 2s ease-in-out;
+            -webkit-transition: all 1s ease-in-out;
         }
         #container img{
             width: 128px;
@@ -35,27 +35,45 @@
             position: absolute;
             -webkit-transition: all 2s ease-in-out;
         }
+        #bottom{
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: 100px;
+
+        }
+        #bottom img{
+            width: 200px;
+            height: 200px;
+            -webkit-transform: rotateX(90deg);
+        }
     </style>
 </head>
 <body>
 <div id="state">
     <div id="container">
-        <img src="img/1.jpg" alt=""/>
-        <img src="img/2.jpg" alt=""/>
-        <img src="img/3.jpg" alt=""/>
-        <img src="img/4.jpg" alt=""/>
-        <img src="img/5.jpg" alt=""/>
-        <img src="img/6.jpg" alt=""/>
-        <img src="img/7.jpg" alt=""/>
-        <img src="img/8.jpg" alt=""/>
-        <img src="img/9.jpg" alt=""/>
+        <img src="img/2.9.jpg" alt=""/>
+
+
+        <img src="img/2.8.png" alt=""/>
+        <img src="img/2.7.png" alt=""/>
+        <img src="img/2.6.png" alt=""/>
+        <img src="img/2.5.png" alt=""/>
+        <img src="img/2.4.png" alt=""/>
+        <img src="img/2.3.png" alt=""/>
+        <img src="img/2.2.png" alt=""/>
+        <img src="img/2.1.png" alt=""/>
     </div>
+
 </div>
 <script>
     var oContainer = document.getElementById('container');
     var aImg = oContainer.getElementsByTagName('img');
     var translateDis = 128/2/Math.tan(20*Math.PI/180);
     var timer = null;
+    var oHappy = document.getElementsByClassName('happy');
+    var oBirthday = document.getElementsByClassName('birthday');
+
 //    for(var i = 0;i<aImg.length;i++){
 //        aImg[j].style.webkitTransition = (9-i)*100 + 'ms';
 //        aImg[i].style.WebkitTransform = 'rotateY('+ -i*40+'deg) translateZ('+ (translateDis+20)+ 'px)';
@@ -96,15 +114,16 @@
 //    },0);
 //
     var idx = 0;
-//    oContainer.onclick = function(){
-//        idx++;
-//        this.style.WebkitTransform = 'rotateY('+ -idx*40+'deg)'
-//    };
+    oContainer.onclick = function(){
+        idx++;
+        this.style.WebkitTransform = 'rotateY('+ -idx*40+'deg)'
+    };
  setInterval(function(oContainer){
 
          oContainer.style.WebkitTransform = 'rotateY(40deg)';
 
  },500);
+
 
     for(var i = 0 ;i<aImg.length;i++){
         (function(index){
@@ -113,6 +132,7 @@
             },(9-i)*100)
         })(i);
     }
+
 //
 //        var idx = 0;
 //        oContainer.onclick = function(){
