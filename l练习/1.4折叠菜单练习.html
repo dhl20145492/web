@@ -64,8 +64,8 @@
             for(var i=0;i<aLi.length;i++){
                 if(aLi[i].className == 'main-menu'){
                    aLi[i].onclick = function(){
-                       var oSubMenu = this.getElementsByTagName('ul')[0];
-                        oSubMenu.style.display = 'block'
+                       var oSubMenu = this.getElementsByTagName('ul');
+                        oSubMenu[0].style.display = 'block'
                        }
                    }
                 }
