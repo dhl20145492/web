@@ -189,14 +189,28 @@ body {
  <!--<script src="demo.js" type="text/javascript"></script>-->
  <SCRIPT>
      $(function () {
+         var index = 0;
+         var aLi=$('.list ul').children();
+         var timer = null;
          $('.list li').on('click',function () {
              $(this).addClass('on').siblings().removeClass('on');
              var index = $(this).index();
                 $('.item').eq(index).show().siblings().hide()
-         })
-         setInterval(function () {
-             var index
-         },1000)
+         });
+        function run() {
+            timer = setInterval(function () {
+                index++;
+                index =  index == aLi.size()?0:index;
+//            alert(aLi.size());
+                aLi.eq(index).trigger('click')
+            },1000)
+        }
+        run();
+        aLi.hover(function () {
+            clearInterval(timer)
+        },function () {
+            run()
+        })
      })
 
  </SCRIPT>

@@ -43,7 +43,7 @@
                     $(this).css('background-color','#777').css('border','1px solid #777');
                     $('li').not($(this)).css('background-color','#aaa').css('border','1px solid white');
                     var index = $(this).index();
-                    $('div').hide().eq(index).show();
+                    $('div').hide().eq(index).stop().fadeIn().show();
                 })
 			})
 	</script>
