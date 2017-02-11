@@ -6,18 +6,53 @@
     <script src="../../jquery-1.12.4.js"></script>
     <script>
         $(function () {
+            var index = 0;
+            var aa = $('#tab').children();
             $('#skin').on('click','li',function () {
 //                alert(1);
                 $(this).addClass('selected').siblings().removeClass('selected');
                $('#nav').removeClass().addClass($(this).attr('id'));
                $('#jancatelog h2').removeClass().addClass($(this).attr('id'));
             });
-            $('#tab').children().hover(function () {
+
+            function run() {
+              timer =   setInterval(function () {
+                    index++;
+                    index =  index == aa.size()?0:index;
+                    aa.eq(index).trigger('click');
+//                    alert(index)
+                },1000);
+            }
+            run();
+
+            aa.on('click',function () {
                 $(this).addClass('bgblue').siblings().removeClass();
-                var index = $(this).index();
+                index = $(this).index();
 //                alert(index);
                 $('#js_jancatelogroll img').hide().eq(index).stop().fadeIn(600).show();
             })
+
+
+            aa.mouseover(function () {
+                clearInterval(timer);
+                $(this).addClass('bgblue').siblings().removeClass();
+                index = $(this).index();
+//                alert(index);
+                $('#js_jancatelogroll img').hide().eq(index).stop().fadeIn(600).show();
+            });
+            aa.mouseout(function () {
+                run()
+            });
+
+            $('#contab li').on('click',function () {
+                var indexl = $(this).index();
+                $(this).addClass('bgp').siblings().removeClass()
+                $('#cent').animate({
+                    left:-780 * indexl
+                },1000)
+            })
+
+
         });
 
 
@@ -253,6 +288,7 @@
             overflow: hidden;
             cursor: pointer;
             display: block;
+            opacity: 0.8;
         }
         #tab a span{
             cursor: pointer;
@@ -261,11 +297,124 @@
             overflow: hidden;
             width: 79px;
             font-size: 5px;
-            /*display: block;*/
+            display: block;
         }
         #tab a.bgblue{
             background: #37C7D4;
         }
+
+        #contain{
+            width: 790px;
+            height: 230px;
+            float: left;
+            margin: 10px 0 0;
+            overflow: hidden;
+        }
+        #contab{
+            border-bottom: 1px solid #E4E4E4;
+            height: 29px;
+            position: relative;
+            width: 790px;
+        }
+        #contab h2{
+            position: absolute;
+            left: 0px;
+            font-size: 18px;
+            width: 100px;
+            height: 29px;
+            line-height: 29px;
+        }
+        #contab ul{
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+        #contab li{
+            float: left;
+            margin: 0 10px 0 0;
+            cursor: pointer;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: #CCCCCC;
+            font-size: 13px;
+
+        }
+        #contab .bgp{
+            background:#FA5889;
+            color: white;
+        }
+        #tent{
+            float: left;
+            overflow: hidden;
+            height: 188px;
+            margin: 8px 5px;
+            width: 790px;
+            position: relative;
+        }
+
+        #cent{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3200px;
+        }
+        #cent li{
+            float: left;
+            height: 188px;
+            overflow: hidden;
+            padding: 0 5px;
+            position: relative;
+            width: 185px;
+        }
+        #jnnotic{
+            float: right;
+            height: 176px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            width: 230px;
+            /*position: absolute;*/
+            right: 0;
+        }
+        #jnnotic .jnnoticimg{
+            cursor: pointer;
+            transition: all 0.5s ease;
+            transform: rotate(0deg);
+
+        }
+        #jnnotic .jnnoticimg:hover{
+            -webkit-transform: rotate(720deg)
+        }
+        #jnnotic .jnnotictext{
+
+            display: block;
+            position: absolute;
+            top: 196px;
+            width: 230px;
+            height: 135px;
+        }
+        #jnnotic .jnnotictext h2{
+            height: 23px;
+            line-height: 23px;
+            border-bottom: 1px solid #DFDFDF;
+            text-indent: 12px;
+            font-size: 12px;
+        }
+        #jnnotic .jnnotictext li {
+            cursor: pointer;
+            font-size: 12px;
+            text-indent: 10px;
+            width: 230px;
+            height: 22px;
+            line-height: 22px;
+            display: block;
+
+        }
+        #jnnotic .jnnotictext li:hover{
+            color: #008CD7;
+        }
+
 
 
 
@@ -374,6 +523,87 @@
                     <span>春季新品发布</span>
                     <span>全场4.1折起</span>
                 </a>
+            </div>
+        </div>
+        <div id="jnnotic">
+            <div class="jnnoticimg">
+            <img src="images/upload/20120216.jpg" alt="">
+            </div>
+            <div class="jnnotictext">
+                <h2>最新动态</h2>
+                <ul>
+                    <li>[活动] 伊伴春鞋迎春大促</li>
+                    <li>[活动] 千百度冬靴新品火热让利</li>
+                    <li>[活动] 千百度冬靴新品火热让利</li>
+                    <li>[活动] 伊伴春鞋迎春大促</li>
+                    <li>[活动] COEY秋冬新品全场2.3折起</li>
+                </ul>
+            </div>
+        </div>
+        <div id="contain">
+            <div id="contab">
+                <h2>品牌活动</h2>
+                <ul>
+                    <li class="bgp">运动</li>
+                    <li>女鞋</li>
+                    <li>男鞋</li>
+                    <li>童鞋</li>
+                </ul>
+            </div>
+            <div id="tent">
+                <div id="cent">
+                <ul>
+                    <li>
+                        <a href=""><img src="images/upload/20120217.jpg" alt=""></a><span>耐克</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120218.jpg" alt=""></a><span>阿迪达斯</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120219.png" alt=""></a><span>李宁</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120220.png" alt=""></a><span>安踏</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120217.jpg" alt=""></a><span>耐克</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120218.jpg" alt=""></a><span>阿迪达斯</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120219.png" alt=""></a><span>李宁</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120220.png" alt=""></a><span>安踏</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120217.jpg" alt=""></a><span>耐克</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120218.jpg" alt=""></a><span>阿迪达斯</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120219.png" alt=""></a><span>李宁</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120220.png" alt=""></a><span>安踏</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120217.jpg" alt=""></a><span>耐克</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120218.jpg" alt=""></a><span>阿迪达斯</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120219.png" alt=""></a><span>李宁</span>
+                    </li>
+                    <li>
+                        <a href=""><img src="images/upload/20120220.png" alt=""></a><span>安踏</span>
+                    </li>
+
+                </ul>
+                </div>
             </div>
         </div>
     </div>
