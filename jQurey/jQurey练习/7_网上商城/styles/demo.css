@@ -1,0 +1,360 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#cont {
+    margin: 0 auto;
+    width: 990px;
+    height: 105px;
+    position: relative;
+}
+
+#header {
+    height: 105px;
+    background: url("../images/headerbg.png");
+    position: relative;
+}
+
+.search {
+    border: 1px solid #BABEBF;
+    color: #999999;
+    font-size: 14px;
+    height: 17px;
+    padding: 3px 6px 5px 6px;
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    margin-left: 40px;
+}
+#skin{
+    float: right;
+    margin-top: 20px;
+}
+#skin li {
+    width: 15px;
+    height: 15px;
+    float: right;
+    background-image: url("images/theme.gif");
+    cursor: pointer;
+    margin-left: 5px;
+}
+#nav{
+    float: left;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    height: 37px;
+    line-height: 37px;
+    width: 990px;
+    z-index: 100;
+    background: #4A4A4A;
+}
+#nav li{
+    float: left;
+    display: inline;
+    position: relative;
+    z-index: 100;
+    margin-left: 20px;
+}
+#nav  a{
+    display:block;
+    padding:0 8px;
+    font-weight:500;
+    color:#fff;
+    font-size:15px;
+}
+
+#skin_0.selected { background-position:0 15px; }
+#skin_1.selected { background-position:15px 15px; }
+#skin_2.selected { background-position:35px 15px; }
+#skin_3.selected { background-position:55px 15px; }
+#skin_4.selected { background-position:75px 15px; }
+#skin_5.selected { background-position:95px 15px; }
+
+
+
+
+#skin_0 {
+    background-position: 0 0;
+}
+
+#skin_1 {
+    background-position: 15px 0;
+}
+
+#skin_2 {
+    background-position: 35px 0;
+}
+
+#skin_3 {
+    background-position: 55px 0;
+}
+
+#skin_4 {
+    background-position: 75px 0;
+}
+
+#skin_5 {
+    background-position: 95px 0;
+}
+
+#nav.skin_0 {
+    background-color: #4A4A4A
+}
+#nav.skin_1{
+    background-color: #BE46D8
+}
+#nav.skin_2{
+    background-color: #E44072
+}
+#nav.skin_3{
+    background-color: #37C7D4
+}
+#nav.skin_4{
+    background-color: #F9AF2A
+}
+#nav.skin_5{
+    background-color: #B1D410
+}
+#jancatelog{
+    position: relative;
+    float: left;
+}
+#jancatelog h2{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-indent: 13px;
+}
+.skin_0 {
+    background-color: #4A4A4A
+}
+.skin_1{
+    background-color: #BE46D8
+}
+.skin_2{
+    background-color: #E44072
+}
+.skin_3{
+    background-color: #37C7D4
+}
+.skin_4{
+    background-color: #F9AF2A
+}
+.skin_5{
+    background-color: #B1D410
+}
+#jancatelogfo{
+    border: 1px solid #6E6E6E;
+    width: 165px;
+    height: 524px;
+    padding: 5px 10px 0 ;
+}
+#jancatelogfo{
+    font-size: 12px;
+    position: relative;
+}
+#jancatelogfo h3{
+    border-bottom: 1px solid #EEEEEE;
+    height: 24px;
+    line-height: 24px;
+    width: 164px;
+    color: #000;
+    overflow: hidden;
+}
+#jancatelogfo ul{
+    /*float: left;*/
+    padding: 0 3px 10px;
+    margin-bottom: 90px;
+}
+#jancatelogfo li a{
+    color: black;
+}
+#jancatelogfo li{
+    float: left;
+    width: 79px;
+    height: 24px;
+    line-height: 24px;
+    color: #AEADAE;
+    position: relative;
+}
+.hot{
+    background-image: url("images/hot.gif");
+    position: absolute;
+    width: 21px;
+    height: 16px;
+}
+#jancatelogroll{
+    width: 550px;
+    height: 320px;
+    position: relative;
+    float: left;
+    margin: 0 11px 0 0 ;
+    overflow: hidden;
+}
+#jancatelogroll img{
+    position: absolute;
+    top:0;
+    left:0;
+}
+#tab{
+    bottom: 0;
+    float: left;
+    position: absolute;
+    overflow: hidden;
+    /*width: 550px;*/
+    /*height: 420px;*/
+}
+#tab a{
+    background: #444444;
+    color: #FFFFFF;
+    float: left;
+    width: 79px;
+    height: 32px;
+    margin-right: 1px;
+    /*display: inline-block;*/
+    padding: 5px 15px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    opacity: 0.8;
+}
+#tab a span{
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    overflow: hidden;
+    width: 79px;
+    font-size: 5px;
+    display: block;
+}
+#tab a.bgblue{
+    background: #37C7D4;
+}
+
+#contain{
+    width: 790px;
+    height: 230px;
+    float: left;
+    margin: 10px 0 0;
+    overflow: hidden;
+}
+#contab{
+    border-bottom: 1px solid #E4E4E4;
+    height: 29px;
+    position: relative;
+    width: 790px;
+}
+#contab h2{
+    position: absolute;
+    left: 0px;
+    font-size: 18px;
+    width: 100px;
+    height: 29px;
+    line-height: 29px;
+}
+#contab ul{
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+#contab li{
+    float: left;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #CCCCCC;
+    font-size: 13px;
+
+}
+#contab .bgp{
+    background:#FA5889;
+    color: white;
+}
+#tent{
+    float: left;
+    overflow: hidden;
+    height: 188px;
+    margin: 8px 5px;
+    width: 790px;
+    position: relative;
+}
+
+#cent{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3200px;
+}
+#cent li{
+    float: left;
+    height: 188px;
+    overflow: hidden;
+    padding: 0 5px;
+    position: relative;
+    width: 185px;
+}
+#jnnotic{
+    float: right;
+    height: 176px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 230px;
+    /*position: absolute;*/
+    right: 0;
+}
+#jnnotic .jnnoticimg{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform: rotate(0deg);
+
+}
+#jnnotic .jnnoticimg:hover{
+    -webkit-transform: rotate(720deg)
+}
+#jnnotic .jnnotictext{
+
+    display: block;
+    position: absolute;
+    top: 196px;
+    width: 230px;
+    height: 135px;
+}
+#jnnotic .jnnotictext h2{
+    height: 23px;
+    line-height: 23px;
+    border-bottom: 1px solid #DFDFDF;
+    text-indent: 12px;
+    font-size: 12px;
+}
+#jnnotic .jnnotictext li {
+    cursor: pointer;
+    font-size: 12px;
+    text-indent: 10px;
+    width: 230px;
+    height: 22px;
+    line-height: 22px;
+    display: block;
+
+}
+#jnnotic .jnnotictext li:hover{
+    color: #008CD7;
+}
+
+
+
